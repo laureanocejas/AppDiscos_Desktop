@@ -12,6 +12,7 @@ namespace App_Discos
 {
     public partial class FrmDiscos : Form
     {
+        private List<Discos> listaDiscos;
         public FrmDiscos()
         {
             InitializeComponent();
@@ -20,7 +21,30 @@ namespace App_Discos
         private void FrmDiscos_Load(object sender, EventArgs e)
         {
             DiscosNegocios negocio=new DiscosNegocios();
-            dgvDiscos.DataSource=negocio.listar();
+            listaDiscos = negocio.listar();
+            dgvDiscos.DataSource = listaDiscos;
+            pbxDiscos.Load(listaDiscos[0].urlImagen);
         }
+        private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
+        {
+            Discos seleccionado = (Discos)dgvDiscos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.urlImagen);
+
+        }
+
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxDiscos.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pbxDiscos.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+            }
+        }
+
+       
     }
 }

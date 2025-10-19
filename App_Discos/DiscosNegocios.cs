@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Data;
+using System.Windows.Forms;
 
 namespace App_Discos
 {
@@ -21,7 +22,8 @@ namespace App_Discos
             {
                 conexion.ConnectionString = "server=DESKTOP-PHQLRTP;database=DISCOS_DB;integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Select Id,Titulo,FechaLanzamiento,CantidadCanciones From DISCOS;\r\n";
+                //comando.CommandText = "Select Id,Titulo,FechaLanzamiento,CantidadCanciones From DISCOS;\r\n";
+                comando.CommandText="Select Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa From DISCOS;";
                 comando.Connection= conexion;
 
                 conexion.Open();
@@ -34,6 +36,7 @@ namespace App_Discos
                     aux.Titulo = (string)lector["Titulo"];
                     aux.fechaLanzamiento = (DateTime)lector["FechaLanzamiento"];
                     aux.cantidadCanciones = lector.GetInt32(3);
+                    aux.urlImagen = (string)lector["UrlImagenTapa"];
 
                     lista.Add(aux);
                 }
