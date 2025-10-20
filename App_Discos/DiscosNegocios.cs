@@ -23,7 +23,8 @@ namespace App_Discos
                 conexion.ConnectionString = "server=DESKTOP-PHQLRTP;database=DISCOS_DB;integrated security=true";
                 comando.CommandType = System.Data.CommandType.Text;
                 //comando.CommandText = "Select Id,Titulo,FechaLanzamiento,CantidadCanciones From DISCOS;\r\n";
-                comando.CommandText="Select Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa From DISCOS;";
+                //comando.CommandText="Select Id, Titulo, FechaLanzamiento, CantidadCanciones, UrlImagenTapa From DISCOS;";
+                comando.CommandText = "Select D.Id,D.Titulo,D.FechaLanzamiento,D.CantidadCanciones,D.UrlImagenTapa,E.Descripcion,TE.Descripcion From DISCOS D, ESTILOS E, TIPOSEDICION TE\r\nWhere D.IdEstilo=E.Id And D.IdTipoEdicion=TE.Id";
                 comando.Connection= conexion;
 
                 conexion.Open();
@@ -37,6 +38,10 @@ namespace App_Discos
                     aux.fechaLanzamiento = (DateTime)lector["FechaLanzamiento"];
                     aux.cantidadCanciones = lector.GetInt32(3);
                     aux.urlImagen = (string)lector["UrlImagenTapa"];
+                    aux.IdEstilos=new Estilos();
+                    aux.IdEstilos.Descripcion = (string)lector["Descripcion"];
+                    aux.IdTipoEdicion=new TipoEdicion();
+                    aux.IdTipoEdicion.Descripcion = (string)lector["Descripcion"];
 
                     lista.Add(aux);
                 }

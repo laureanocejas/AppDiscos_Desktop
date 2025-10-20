@@ -13,6 +13,11 @@ namespace App_Discos
         public DateTime fechaLanzamiento { get; set; }
         public int cantidadCanciones { get; set; }
         public string urlImagen {  get; set; }
+        public Estilos IdEstilos { get; set; }
+        public TipoEdicion IdTipoEdicion { get; set; }
+
+
+        
 
     }
 }

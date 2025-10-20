@@ -23,12 +23,15 @@ namespace App_Discos
             DiscosNegocios negocio=new DiscosNegocios();
             listaDiscos = negocio.listar();
             dgvDiscos.DataSource = listaDiscos;
-            pbxDiscos.Load(listaDiscos[0].urlImagen);
+            dgvDiscos.Columns["urlImagen"].Visible=false;
+            cargarImagen(listaDiscos[0].urlImagen);
         }
         private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
         {
             Discos seleccionado = (Discos)dgvDiscos.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.urlImagen);
+
+            
 
         }
 
