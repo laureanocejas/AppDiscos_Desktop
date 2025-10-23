@@ -5,11 +5,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace App_Discos
+
+using dominio;
+using Negocio;
+
+namespace negocio
 {
-    internal class DiscosNegocios
+     public class DiscosNegocios
     {
         public List<Discos>listar()
         {
@@ -59,5 +62,33 @@ namespace App_Discos
             
 
         }
+
+        public void agregar(Discos nuevo)
+        {
+            AccesoDatos datos= new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into DISCOS (Titulo,FechaLanzamiento,CantidadCanciones) values ('" + nuevo.Titulo + "', '" + nuevo.fechaLanzamiento + "', " + nuevo.cantidadCanciones + ")");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+        public void modificar(Discos modificar)
+        {
+
+        }
     }
+
+
+    
 }

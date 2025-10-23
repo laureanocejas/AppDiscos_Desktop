@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using dominio;
+using negocio;
 namespace App_Discos
 {
     public partial class FrmDiscos : Form
@@ -48,6 +49,10 @@ namespace App_Discos
             }
         }
 
-       
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAltaDisco alta=new frmAltaDisco();
+            alta.ShowDialog();
+        }
     }
 }
