@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dominio;
+using negocio;
 
 namespace Negocio
 {
-    internal class EstiloNegocio
+    public class EstiloNegocio
     {
         public List<Estilos> listar()
         {
@@ -21,7 +22,7 @@ namespace Negocio
 				{
 					Estilos aux=new Estilos();
 					aux.Id = (int)datos.Lector["Id"];
-					aux.Descripcion=(string)datos.Lector["Description"];
+					aux.Descripcion=(string)datos.Lector["Descripcion"];
 
 					lista.Add(aux);
 

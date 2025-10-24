@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using dominio;
 using negocio;
+using Negocio;
 
 namespace App_Discos
 {
@@ -34,11 +35,40 @@ namespace App_Discos
                 dis.Titulo =(txtTitulo.Text);
                 dis.fechaLanzamiento = DateTime.Parse(txtFechaLanz.Text);
                 dis.cantidadCanciones = int.Parse(txtCantidad.Text);
+                dis.IdEstilos =(Estilos) cbxEstilo.SelectedItem;
+                dis.IdTipoEdicion = (TipoEdicion)cbxTipoEdicion.SelectedItem;
 
                 negocio.agregar(dis);
                 MessageBox.Show("Agregado existosamente");
                 Close();
 
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void frmAltaDisco_Load(object sender, EventArgs e)
+        {
+           EstiloNegocio negocio= new EstiloNegocio();
+            
+            try
+            {
+                cbxEstilo.DataSource = negocio.listar();
+               
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            TipoEdicionNegocio tipo = new TipoEdicionNegocio();
+            try
+            {
+                
+                cbxTipoEdicion.DataSource = tipo.listar();
             }
             catch (Exception ex)
             {

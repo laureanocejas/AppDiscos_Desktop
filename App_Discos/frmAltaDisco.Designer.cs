@@ -34,10 +34,12 @@
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.txtFechaLanz = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lblEstilo = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblTipoEdicion = new System.Windows.Forms.Label();
+            this.cbxEstilo = new System.Windows.Forms.ComboBox();
+            this.cbxTipoEdicion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -88,21 +90,14 @@
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 5;
             // 
-            // label4
+            // lblEstilo
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(116, 166);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(229, 159);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.lblEstilo.AutoSize = true;
+            this.lblEstilo.Location = new System.Drawing.Point(116, 166);
+            this.lblEstilo.Name = "lblEstilo";
+            this.lblEstilo.Size = new System.Drawing.Size(32, 13);
+            this.lblEstilo.TabIndex = 6;
+            this.lblEstilo.Text = "Estilo";
             // 
             // btnAceptar
             // 
@@ -124,15 +119,44 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblTipoEdicion
+            // 
+            this.lblTipoEdicion.AutoSize = true;
+            this.lblTipoEdicion.Location = new System.Drawing.Point(116, 211);
+            this.lblTipoEdicion.Name = "lblTipoEdicion";
+            this.lblTipoEdicion.Size = new System.Drawing.Size(66, 13);
+            this.lblTipoEdicion.TabIndex = 10;
+            this.lblTipoEdicion.Text = "Tipo Edicion";
+            // 
+            // cbxEstilo
+            // 
+            this.cbxEstilo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEstilo.FormattingEnabled = true;
+            this.cbxEstilo.Location = new System.Drawing.Point(229, 158);
+            this.cbxEstilo.Name = "cbxEstilo";
+            this.cbxEstilo.Size = new System.Drawing.Size(100, 21);
+            this.cbxEstilo.TabIndex = 11;
+            // 
+            // cbxTipoEdicion
+            // 
+            this.cbxTipoEdicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoEdicion.FormattingEnabled = true;
+            this.cbxTipoEdicion.Location = new System.Drawing.Point(229, 203);
+            this.cbxTipoEdicion.Name = "cbxTipoEdicion";
+            this.cbxTipoEdicion.Size = new System.Drawing.Size(100, 21);
+            this.cbxTipoEdicion.TabIndex = 12;
+            // 
             // frmAltaDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cbxTipoEdicion);
+            this.Controls.Add(this.cbxEstilo);
+            this.Controls.Add(this.lblTipoEdicion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblEstilo);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtFechaLanz);
             this.Controls.Add(this.txtTitulo);
@@ -141,6 +165,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Name = "frmAltaDisco";
             this.Text = "frmAltaDisco";
+            this.Load += new System.EventHandler(this.frmAltaDisco_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,9 +179,11 @@
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtFechaLanz;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label lblEstilo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblTipoEdicion;
+        private System.Windows.Forms.ComboBox cbxEstilo;
+        private System.Windows.Forms.ComboBox cbxTipoEdicion;
     }
 }
