@@ -21,18 +21,27 @@ namespace App_Discos
 
         private void FrmDiscos_Load(object sender, EventArgs e)
         {
-            DiscosNegocios negocio=new DiscosNegocios();
-            listaDiscos = negocio.listar();
-            dgvDiscos.DataSource = listaDiscos;
-            dgvDiscos.Columns["urlImagen"].Visible=false;
-            cargarImagen(listaDiscos[0].urlImagen);
+            DiscosNegocios negocio = new DiscosNegocios();
+
+            try
+            {
+                listaDiscos = negocio.listar();
+                dgvDiscos.DataSource = listaDiscos;
+                dgvDiscos.Columns["urlImagen"].Visible = false;
+                cargarImagen(listaDiscos[0].urlImagen);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
         private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
         {
             Discos seleccionado = (Discos)dgvDiscos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.urlImagen);
-
-            
+            cargarImagen(seleccionado.urlImagen);      
 
         }
 

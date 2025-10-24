@@ -40,7 +40,12 @@ namespace negocio
                     aux.Titulo = (string)lector["Titulo"];
                     aux.fechaLanzamiento = (DateTime)lector["FechaLanzamiento"];
                     aux.cantidadCanciones = lector.GetInt32(3);
-                    aux.urlImagen = (string)lector["UrlImagenTapa"];
+
+                    //if (!(lector.IsDBNull(lector.GetOrdinal("UrlImagen"))))
+                    //aux.urlImagen = (string)lector["UrlImagenTapa"];
+                    if (!(lector["UrlImagen"]is DBNull))
+                        aux.urlImagen = (string)lector["UrlImagenTapa"];
+
                     aux.IdEstilos=new Estilos();
                     aux.IdEstilos.Descripcion = (string)lector["Descripcion"];
                     aux.IdTipoEdicion=new TipoEdicion();
