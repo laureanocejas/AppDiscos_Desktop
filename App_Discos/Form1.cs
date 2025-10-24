@@ -21,6 +21,18 @@ namespace App_Discos
 
         private void FrmDiscos_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+            
+        private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
+        {
+            Discos seleccionado = (Discos)dgvDiscos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.urlImagen);      
+
+        }
+        private void cargar()
+        {
             DiscosNegocios negocio = new DiscosNegocios();
 
             try
@@ -36,14 +48,9 @@ namespace App_Discos
 
                 MessageBox.Show(ex.ToString());
             }
-            
-        }
-        private void dgvDiscos_SelectionChanged(object sender, EventArgs e)
-        {
-            Discos seleccionado = (Discos)dgvDiscos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.urlImagen);      
 
         }
+        
 
         private void cargarImagen(string imagen)
         {
@@ -62,6 +69,7 @@ namespace App_Discos
         {
             frmAltaDisco alta=new frmAltaDisco();
             alta.ShowDialog();
+            cargar();
         }
     }
 }

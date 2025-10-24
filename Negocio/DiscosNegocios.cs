@@ -43,7 +43,7 @@ namespace negocio
 
                     //if (!(lector.IsDBNull(lector.GetOrdinal("UrlImagen"))))
                     //aux.urlImagen = (string)lector["UrlImagenTapa"];
-                    if (!(lector["UrlImagen"]is DBNull))
+                    if (!(lector["UrlImagenTapa"]is DBNull))
                         aux.urlImagen = (string)lector["UrlImagenTapa"];
 
                     aux.IdEstilos=new Estilos();
