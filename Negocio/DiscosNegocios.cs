@@ -73,10 +73,10 @@ namespace negocio
             AccesoDatos datos= new AccesoDatos();
             try
             {
-                datos.setearConsulta("insert into DISCOS (Titulo,FechaLanzamiento,CantidadCanciones,IdEstilo,IdTipoEdicion) values ('" + nuevo.Titulo + "', '" + nuevo.fechaLanzamiento + "', " + nuevo.cantidadCanciones + ",@IdEstilo,@IdTipoEdicion)");
+                datos.setearConsulta("insert into DISCOS (Titulo,FechaLanzamiento,CantidadCanciones,IdEstilo,IdTipoEdicion,UrlImagenTapa) values ('" + nuevo.Titulo + "', '" + nuevo.fechaLanzamiento + "', " + nuevo.cantidadCanciones + ",@IdEstilo,@IdTipoEdicion,@UrlImagenTapa)");
                 datos.setearParametro("@IdEstilo", nuevo.IdEstilos.Id);
                 datos.setearParametro("@IdTipoEdicion", nuevo.IdTipoEdicion.Id);
-
+                datos.setearParametro("@UrlImagenTapa", nuevo.urlImagen);
                 datos.ejecutarAccion();
             }
             catch (Exception ex)

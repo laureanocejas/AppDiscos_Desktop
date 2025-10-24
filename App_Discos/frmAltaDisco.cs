@@ -35,6 +35,7 @@ namespace App_Discos
                 dis.Titulo =(txtTitulo.Text);
                 dis.fechaLanzamiento = DateTime.Parse(txtFechaLanz.Text);
                 dis.cantidadCanciones = int.Parse(txtCantidad.Text);
+                dis.urlImagen = txtUrlImagen.Text;
                 dis.IdEstilos =(Estilos) cbxEstilo.SelectedItem;
                 dis.IdTipoEdicion = (TipoEdicion)cbxTipoEdicion.SelectedItem;
 
@@ -74,6 +75,24 @@ namespace App_Discos
             {
 
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+          private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
+
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxDisco.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+
+                pbxDisco.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
         }
     }

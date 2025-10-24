@@ -40,6 +40,10 @@
             this.lblTipoEdicion = new System.Windows.Forms.Label();
             this.cbxEstilo = new System.Windows.Forms.ComboBox();
             this.cbxTipoEdicion = new System.Windows.Forms.ComboBox();
+            this.lblUrlImagen = new System.Windows.Forms.Label();
+            this.pbxDisco = new System.Windows.Forms.PictureBox();
+            this.txtUrlImagen = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDisco)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -74,26 +78,26 @@
             this.txtTitulo.Location = new System.Drawing.Point(229, 27);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(100, 20);
-            this.txtTitulo.TabIndex = 3;
+            this.txtTitulo.TabIndex = 0;
             // 
             // txtFechaLanz
             // 
             this.txtFechaLanz.Location = new System.Drawing.Point(229, 68);
             this.txtFechaLanz.Name = "txtFechaLanz";
             this.txtFechaLanz.Size = new System.Drawing.Size(100, 20);
-            this.txtFechaLanz.TabIndex = 4;
+            this.txtFechaLanz.TabIndex = 1;
             // 
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(229, 111);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
-            this.txtCantidad.TabIndex = 5;
+            this.txtCantidad.TabIndex = 2;
             // 
             // lblEstilo
             // 
             this.lblEstilo.AutoSize = true;
-            this.lblEstilo.Location = new System.Drawing.Point(116, 166);
+            this.lblEstilo.Location = new System.Drawing.Point(117, 221);
             this.lblEstilo.Name = "lblEstilo";
             this.lblEstilo.Size = new System.Drawing.Size(32, 13);
             this.lblEstilo.TabIndex = 6;
@@ -101,20 +105,20 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(229, 253);
+            this.btnAceptar.Location = new System.Drawing.Point(239, 299);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 8;
+            this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(456, 253);
+            this.btnCancelar.Location = new System.Drawing.Point(457, 299);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 9;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -122,7 +126,7 @@
             // lblTipoEdicion
             // 
             this.lblTipoEdicion.AutoSize = true;
-            this.lblTipoEdicion.Location = new System.Drawing.Point(116, 211);
+            this.lblTipoEdicion.Location = new System.Drawing.Point(116, 266);
             this.lblTipoEdicion.Name = "lblTipoEdicion";
             this.lblTipoEdicion.Size = new System.Drawing.Size(66, 13);
             this.lblTipoEdicion.TabIndex = 10;
@@ -132,25 +136,54 @@
             // 
             this.cbxEstilo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstilo.FormattingEnabled = true;
-            this.cbxEstilo.Location = new System.Drawing.Point(229, 158);
+            this.cbxEstilo.Location = new System.Drawing.Point(229, 213);
             this.cbxEstilo.Name = "cbxEstilo";
             this.cbxEstilo.Size = new System.Drawing.Size(100, 21);
-            this.cbxEstilo.TabIndex = 11;
+            this.cbxEstilo.TabIndex = 4;
             // 
             // cbxTipoEdicion
             // 
             this.cbxTipoEdicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoEdicion.FormattingEnabled = true;
-            this.cbxTipoEdicion.Location = new System.Drawing.Point(229, 203);
+            this.cbxTipoEdicion.Location = new System.Drawing.Point(229, 258);
             this.cbxTipoEdicion.Name = "cbxTipoEdicion";
             this.cbxTipoEdicion.Size = new System.Drawing.Size(100, 21);
-            this.cbxTipoEdicion.TabIndex = 12;
+            this.cbxTipoEdicion.TabIndex = 5;
+            // 
+            // lblUrlImagen
+            // 
+            this.lblUrlImagen.AutoSize = true;
+            this.lblUrlImagen.Location = new System.Drawing.Point(117, 163);
+            this.lblUrlImagen.Name = "lblUrlImagen";
+            this.lblUrlImagen.Size = new System.Drawing.Size(58, 13);
+            this.lblUrlImagen.TabIndex = 13;
+            this.lblUrlImagen.Text = "Url Imagen";
+            // 
+            // pbxDisco
+            // 
+            this.pbxDisco.Location = new System.Drawing.Point(444, 37);
+            this.pbxDisco.Name = "pbxDisco";
+            this.pbxDisco.Size = new System.Drawing.Size(277, 197);
+            this.pbxDisco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxDisco.TabIndex = 15;
+            this.pbxDisco.TabStop = false;
+            // 
+            // txtUrlImagen
+            // 
+            this.txtUrlImagen.Location = new System.Drawing.Point(229, 163);
+            this.txtUrlImagen.Name = "txtUrlImagen";
+            this.txtUrlImagen.Size = new System.Drawing.Size(100, 20);
+            this.txtUrlImagen.TabIndex = 16;
+            this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
             // 
             // frmAltaDisco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtUrlImagen);
+            this.Controls.Add(this.pbxDisco);
+            this.Controls.Add(this.lblUrlImagen);
             this.Controls.Add(this.cbxTipoEdicion);
             this.Controls.Add(this.cbxEstilo);
             this.Controls.Add(this.lblTipoEdicion);
@@ -166,6 +199,7 @@
             this.Name = "frmAltaDisco";
             this.Text = "frmAltaDisco";
             this.Load += new System.EventHandler(this.frmAltaDisco_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxDisco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +219,8 @@
         private System.Windows.Forms.Label lblTipoEdicion;
         private System.Windows.Forms.ComboBox cbxEstilo;
         private System.Windows.Forms.ComboBox cbxTipoEdicion;
+        private System.Windows.Forms.Label lblUrlImagen;
+        private System.Windows.Forms.PictureBox pbxDisco;
+        private System.Windows.Forms.TextBox txtUrlImagen;
     }
 }
